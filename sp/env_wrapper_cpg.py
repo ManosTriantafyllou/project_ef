@@ -1,25 +1,4 @@
-"""
-env_wrapper_cpg.py
---------------------
-RESIDUAL LEARNING με Central Pattern Generator (CPG) βάση — επιτρέπεται
-ρητά από το PDF: "central pattern generators" είναι στη λίστα επιτρεπτών
-μεθόδων για το Project 3.
 
-Ιδέα:
-    action_final = CPG_trajectory(t) + PPO_correction
-
-Σε αντίθεση με το προηγούμενο residual (Plan C), όπου η βάση ήταν η
-ΣΤΑΤΙΚΗ standing pose (που ενθάρρυνε τον agent να μάθει "μην κινηθείς,
-ήδη παίρνω καλό reward"), εδώ η βάση είναι μια ΗΔΗ ΚΙΝΟΥΜΕΝΗ, περιοδική
-τροχιά βαδίσματος (sinusoidal leg pattern, classic CPG για quadrupeds).
-
-Έτσι, η "μηδενική προσπάθεια" (PPO output ≈ 0) ΔΕΝ είναι στατική
-ισορροπία — είναι ήδη μια πρόχειρη προσπάθεια περπατήματος. Ο PPO
-μαθαίνει μόνο να ΔΙΟΡΘΩΝΕΙ αυτό το pattern (πλάτος, φάση, ισορροπία),
-αντί να αποφασίζει από το μηδέν αν αξίζει να κινηθεί καθόλου.
-
-ΔΕΝ αγγίζει reward/observation - μόνο πώς παράγεται το action.
-"""
 
 import numpy as np
 import gymnasium as gym
